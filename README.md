@@ -1,6 +1,6 @@
 # Explorer
 
-A QTUM blockchain explorer web application service for [Qtumcore Node](https://github.com/qtumproject/qtumcore-node) using the [QTUM API](https://github.com/qtumproject/insight-api).
+A BERYCOIN blockchain explorer web application service for [Qtumcore Node](https://github.com/qtumproject/qtumcore-node) using the [QTUM API](https://github.com/qtumproject/insight-api).
 
 
 ## Getting Started
