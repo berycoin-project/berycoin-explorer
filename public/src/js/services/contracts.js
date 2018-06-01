@@ -6,14 +6,14 @@ angular.module('insight.contracts')
 			return $resource(window.apiPrefix + '/contracts/:contractAddressStr/info');
 	})
 	.factory('Contracts',
-	function(QtumCoreLib, Opcodes, Networks, Constants) {
+	function(BerycoinCoreLib, Opcodes, Networks, Constants) {
 
 		var CONTRACT_CALL = 194;
 		var CONTRACT_CREATE = 193;
 
 		return {
-			isValidQtumAddress: function (address) {
-                return QtumCoreLib.Address.isValid(address, Constants.NETWORK)
+			isValidBerycoinAddress: function (address) {
+                return BerycoinCoreLib.Address.isValid(address, Constants.NETWORK)
 			},
 			getBitAddressFromContractAddress: function (contractAddress) {
 
@@ -21,10 +21,10 @@ angular.module('insight.contracts')
 
                     var network = Networks.getCurrentNetwork(),
                         networkId = network.pubkeyhash.toString(16),
-                        checksum = QtumCoreLib.crypto.Hash.sha256sha256(new QtumCoreLib.deps.Buffer(networkId + contractAddress, 'hex')),
+                        checksum = BerycoinCoreLib.crypto.Hash.sha256sha256(new BerycoinCoreLib.deps.Buffer(networkId + contractAddress, 'hex')),
                         hexBitAddress = networkId + contractAddress + checksum.toString('hex').slice(0, 8);
 
-                    return QtumCoreLib.encoding.Base58.encode(new QtumCoreLib.deps.Buffer(hexBitAddress, 'hex'));
+                    return BerycoinCoreLib.encoding.Base58.encode(new BerycoinCoreLib.deps.Buffer(hexBitAddress, 'hex'));
 
 				} catch (e) {
 					return null;
@@ -37,7 +37,7 @@ angular.module('insight.contracts')
 
                     var network = Networks.getCurrentNetwork(),
                         networkId = network.pubkeyhash.toString(16),
-                        hexBitAddress = QtumCoreLib.encoding.Base58.decode(bitAddress).toString('hex');
+                        hexBitAddress = BerycoinCoreLib.encoding.Base58.decode(bitAddress).toString('hex');
 
                     if (hexBitAddress.slice(0, 2) !== networkId) {
                         return null
@@ -53,7 +53,7 @@ angular.module('insight.contracts')
 			},
 			getContractOpcodesString: function (hex) {
 
-				var contractCode = new QtumCoreLib.deps.Buffer(hex, 'hex'),
+				var contractCode = new BerycoinCoreLib.deps.Buffer(hex, 'hex'),
 					ops = [];
 
 				for (var index = 0; index < contractCode.length; index++) {
@@ -93,7 +93,7 @@ angular.module('insight.contracts')
 
 				try {
 
-					var script = QtumCoreLib.Script(hex);
+					var script = BerycoinCoreLib.Script(hex);
 
 					if (script.chunks && script.chunks.length) {
 
@@ -130,7 +130,7 @@ angular.module('insight.contracts')
 
 				try {
 
-					var script = QtumCoreLib.Script(hex);
+					var script = BerycoinCoreLib.Script(hex);
 
 					if (script.chunks && script.chunks.length) {
 
@@ -158,13 +158,13 @@ angular.module('insight.contracts')
 			},
 			getContractAddress: function (txId, num) {
 				var reverseTxId = txId.match(/.{2}/g).reverse().join(""),
-					buf = new QtumCoreLib.deps.Buffer(4);
+					buf = new BerycoinCoreLib.deps.Buffer(4);
 
 				buf.writeUInt32LE(num, 0);
 
 				var nHex = buf.toString('hex'),
 					addr = reverseTxId + nHex,
-					bufferAddress = QtumCoreLib.crypto.Hash.sha256ripemd160(new QtumCoreLib.deps.Buffer(addr, 'hex'));
+					bufferAddress = BerycoinCoreLib.crypto.Hash.sha256ripemd160(new BerycoinCoreLib.deps.Buffer(addr, 'hex'));
 
 				return bufferAddress.toString('hex');
 			}

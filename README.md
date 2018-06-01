@@ -1,6 +1,6 @@
 # Explorer
 
-A BERYCOIN blockchain explorer web application service for [Qtumcore Node](https://github.com/qtumproject/qtumcore-node) using the [QTUM API](https://github.com/qtumproject/insight-api).
+A BERYCOIN blockchain explorer web application service for [Berycoincore Node](https://github.com/berycoin-project/berycoincore-node) using the [BERYCOIN API](https://github.com/berycoin-project/insight-api).
 
 
 ## Getting Started
@@ -13,44 +13,44 @@ A BERYCOIN blockchain explorer web application service for [Qtumcore Node](https
     ```  
 2. Install mongo https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/  
 
-3. Install qtum-bitcore https://github.com/qtumproject/qtum-bitcore - with ZMQ ! 
+3. Install berycoin-bitcore https://github.com/berycoin-project/berycoin-bitcore - with ZMQ ! 
 
     ```bash
     # with ZMQ
     sudo apt-get install libzmq3-dev 
     ```  
-4. Install qtumcore-node  
+4. Install berycoincore-node  
 
     ```bash
-    npm i https://github.com/qtumproject/qtumcore-node.git#master
+    npm i https://github.com/berycoin-project/berycoincore-node.git#master
 
-    $(npm bin)/qtumcore-node create mynode
+    $(npm bin)/berycoincore-node create mynode
 
     cd mynode
 
-    $(npm bin)/qtumcore-node install https://github.com/qtumproject/insight-api.git#master
-    $(npm bin)/qtumcore-node install https://github.com/qtumproject/qtum-explorer.git#master
+    $(npm bin)/berycoincore-node install https://github.com/berycoin-project/insight-api.git#master
+    $(npm bin)/berycoincore-node install https://github.com/berycoin-project/berycoin-explorer.git#master
     ```  
-5. Edit qtumcore-node.json  
+5. Edit berycoincore-node.json  
 
     ```json
     {
       "network": "livenet",
       "port": 3001,
       "services": [
-        "qtumd",
-        "qtum-insight-api",
-        "qtum-explorer",
+        "berycoind",
+        "berycoin-insight-api",
+        "berycoin-explorer",
         "web"
       ],
       "servicesConfig": {
-        "qtum-explorer": {
-          "apiPrefix": "qtum-insight-api",
-          "routePrefix": "qtum-explorer",
-          "nodemapLink": "https://qtum.org/en/nodemap"
+        "berycoin-explorer": {
+          "apiPrefix": "berycoin-insight-api",
+          "routePrefix": "berycoin-explorer",
+          "nodemapLink": "https://berycoin.org/en/nodemap"
        },
-       "qtum-insight-api": {
-         "routePrefix": "qtum-insight-api",
+       "berycoin-insight-api": {
+         "routePrefix": "berycoin-insight-api",
          "rateLimiterOptions": {
            "whitelist": [
              "123.456.12.34",
@@ -64,7 +64,7 @@ A BERYCOIN blockchain explorer web application service for [Qtumcore Node](https
           "db": {
             "host": "127.0.0.1",
             "port": "27017",
-            "database": "qtum-api-livenet",
+            "database": "berycoin-api-livenet",
             "user": "",
             "password": ""
          },
@@ -72,17 +72,17 @@ A BERYCOIN blockchain explorer web application service for [Qtumcore Node](https
             "updateFromBlockHeight": 0
           }
         },
-        "qtumd": {
+        "berycoind": {
           "spawn": {
-            "datadir": "/home/user/.qtum",
-           "exec": "/home/user/qtum-bitcore/src/qtumd"
+            "datadir": "/home/user/.berycoin",
+           "exec": "/home/user/berycoin-bitcore/src/berycoind"
           }
         }
       }
     }
 
     ```  
-6. Edit qtum.conf  
+6. Edit berycoin.conf  
 
     ```
     server=1
@@ -105,10 +105,10 @@ A BERYCOIN blockchain explorer web application service for [Qtumcore Node](https
 7. Run Node  
 
     ```
-    $(npm bin)/qtumcore-node start
+    $(npm bin)/berycoincore-node start
     ```  
 
-8. Open a web browser to `http://localhost:3001/qtum-explorer` or `http://localhost:3001/qtum-insight-api`  
+8. Open a web browser to `http://localhost:3001/berycoin-explorer` or `http://localhost:3001/berycoin-insight-api`  
 
 ## Development
 
@@ -159,11 +159,11 @@ compile***.
 
 ## Note
 
-For more details about the [QTUM API](https://github.com/qtumproject/insight-api) configuration and end-points, go to [QTUM API](https://github.com/qtumproject/insight-api).
+For more details about the [BERYCOIN API](https://github.com/berycoin-project/insight-api) configuration and end-points, go to [BERYCOIN API](https://github.com/berycoin-project/insight-api).
 
 ## Contribute
 
-Contributions and suggestions are welcomed at the [Explorer GitHub repository](https://github.com/qtumproject/qtum-explorer).
+Contributions and suggestions are welcomed at the [Explorer GitHub repository](https://github.com/berycoin-project/berycoin-explorer).
 
 
 ## License

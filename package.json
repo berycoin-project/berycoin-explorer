@@ -1,23 +1,23 @@
 {
-  "name": "qtum-explorer",
-  "description": "An open-source frontend for the Insight API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the qtum network and build your own services with it.",
+  "name": "berycoin-explorer",
+  "description": "An open-source frontend for the Insight API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the berycoin network and build your own services with it.",
   "version": "0.11.3",
-  "repository": "git@github.com:qtumproject/qtum-explorer.git",
+  "repository": "git@github.com:berycoin-project/berycoin-explorer.git",
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/qtumproject/qtum-explorer/issues"
+    "url": "https://github.com/berycoin-project/berycoin-explorer/issues"
   },
-  "homepage": "https://github.com/qtumproject/qtum-explorer",
+  "homepage": "https://github.com/berycoin-project/berycoin-explorer",
   "license": "MIT",
   "keywords": [
     "insight",
     "blockchain",
     "blockexplorer",
-    "qtum",
-    "qtumcore",
+    "berycoin",
+    "berycoincore",
     "front-end"
   ],
-  "qtumcoreNode": "qtumcore-node",
+  "berycoincoreNode": "berycoincore-node",
   "dependencies": {
   },
   "devDependencies": {

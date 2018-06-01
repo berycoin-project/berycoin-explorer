@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('insight.qtumcorelib').factory('QtumCoreLib',
+angular.module('insight.berycoincorelib').factory('BerycoinCoreLib',
     function() {
-        var QtumCoreLib = require('qtumcore-lib');
-        return QtumCoreLib;
+        var BerycoinCoreLib = require('berycoincore-lib');
+        return BerycoinCoreLib;
     });
 
