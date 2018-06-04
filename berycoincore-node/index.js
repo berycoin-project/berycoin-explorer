@@ -14,7 +14,7 @@ var InsightUI = function(options) {
   if (typeof options.apiPrefix !== 'undefined') {
     this.apiPrefix = options.apiPrefix;
   } else {
-    this.apiPrefix = 'api';
+    this.apiPrefix = 'berycoin-insight-api';
   }
   if (typeof options.routePrefix !== 'undefined') {
     this.routePrefix = options.routePrefix;
