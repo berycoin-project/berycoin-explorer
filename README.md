@@ -96,7 +96,7 @@ A BERYCOIN blockchain explorer web application service for [Berycoincore Node](h
     rpcallowip=127.0.0.1
     rpcuser=user
     rpcpassword=password
-    rpcport=18332
+    rpcport=8332
     reindex=1
     gen=0
     addrindex=1
