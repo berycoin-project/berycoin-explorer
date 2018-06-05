@@ -46,8 +46,8 @@ A BERYCOIN blockchain explorer web application service for [Berycoincore Node](h
       "servicesConfig": {
         "berycoin-explorer": {
           "apiPrefix": "berycoin-insight-api",
-          "routePrefix": "berycoin-explorer",
-          "nodemapLink": "https://berycoin.org/en/nodemap"
+          "routePrefix": "",
+          "nodemapLink": "https://berycoin.com/en/nodemap"
        },
        "berycoin-insight-api": {
          "routePrefix": "berycoin-insight-api",
@@ -74,8 +74,8 @@ A BERYCOIN blockchain explorer web application service for [Berycoincore Node](h
         },
         "berycoind": {
           "spawn": {
-            "datadir": "/home/user/.berycoin",
-           "exec": "/home/user/berycoin-bitcore/src/berycoind"
+            "datadir": "/home/crypto/.berycoin",
+            "exec": "/home/crypto/berycoin-bitcore/src/berycoind"
           }
         }
       }
