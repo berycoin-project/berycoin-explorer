@@ -8,11 +8,35 @@ A BERYCOIN blockchain explorer web application service for [Berycoincore Node](h
 1. Install nvm https://github.com/creationix/nvm  
 
     ```bash
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    source ~/.bashrc
     nvm i v6
     nvm use v6
     ```  
 2. Install mongo https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/  
+    ```ubuntu 16.04
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+    sudo apt-get update
+    sudo apt-get install -y mongodb-org
+    
+    ```
+    
+    
+    ```    
+    
+    echo "mongodb-org hold" | sudo dpkg --set-selections
+    echo "mongodb-org-server hold" | sudo dpkg --set-selections
+    echo "mongodb-org-shell hold" | sudo dpkg --set-selections
+    echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+    echo "mongodb-org-tools hold" | sudo dpkg --set-selections
 
+    ```
+    
+    
+    ```
+    sudo service mongod start
+    ```
 3. Install berycoin-bitcore https://github.com/berycoin-project/berycoin-bitcore - with ZMQ ! 
 
     ```bash
@@ -50,7 +74,7 @@ A BERYCOIN blockchain explorer web application service for [Berycoincore Node](h
           "nodemapLink": "https://berycoin.com/en/nodemap"
        },
        "berycoin-insight-api": {
-         "routePrefix": "berycoin-insight-api",
+         "routePrefix": "insight-api",
          "rateLimiterOptions": {
            "whitelist": [
              "123.456.12.34",
@@ -108,7 +132,7 @@ A BERYCOIN blockchain explorer web application service for [Berycoincore Node](h
     $(npm bin)/berycoincore-node start
     ```  
 
-8. Open a web browser to `http://localhost:3001` or `http://localhost:3001/berycoin-insight-api`  
+8. Open a web browser to `http://localhost:3001` or `http://localhost:3001/insight-api`  
 
 ## Development
 
