@@ -94,7 +94,7 @@ A BERYCOIN blockchain explorer web application service for [Berycoincore Node](h
           "nodemapLink": "https://berycoin.com/en/nodemap"
        },
        "berycoin-insight-api": {
-         "routePrefix": "insight-api",
+         "routePrefix": "berycoin-insight-api",
          "rateLimiterOptions": {
            "whitelist": [
              "123.456.12.34",
