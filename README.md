@@ -108,7 +108,7 @@ A BERYCOIN blockchain explorer web application service for [Berycoincore Node](h
     $(npm bin)/berycoincore-node start
     ```  
 
-8. Open a web browser to `http://localhost:3001/berycoin-explorer` or `http://localhost:3001/berycoin-insight-api`  
+8. Open a web browser to `http://localhost:3001` or `http://localhost:3001/berycoin-insight-api`  
 
 ## Development
 
