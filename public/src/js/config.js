@@ -29,7 +29,7 @@ angular.module('insight').config(function($routeProvider) {
 	$routeProvider.
 	when('/block/:blockHash', {
 		templateUrl: 'views/block.html',
-		title: 'Quantum Block '
+		title: 'Berycoin Block '
 	}).
 	when('/block-index/:blockHeight', {
 		controller: 'BlocksController',
@@ -41,7 +41,7 @@ angular.module('insight').config(function($routeProvider) {
 	}).
 	when('/tx/:txId/:v_type?/:v_index?', {
 		templateUrl: 'views/transaction.html',
-		title: 'Quantum Transaction '
+		title: 'Berycoin Transaction '
 	}).
 	when('/', {
 		templateUrl: 'views/index.html',
@@ -49,19 +49,19 @@ angular.module('insight').config(function($routeProvider) {
 	}).
 	when('/blocks', {
 		templateUrl: 'views/block_list.html',
-		title: 'Quantum Blocks solved Today'
+		title: 'Berycoin Blocks solved Today'
 	}).
 	when('/blocks-date/:blockDate/:startTimestamp?', {
 		templateUrl: 'views/block_list.html',
-		title: 'Quantum Blocks solved '
+		title: 'Berycoin Blocks solved '
 	}).
 	when('/address/:addrStr', {
 		templateUrl: 'views/address.html',
-		title: 'Quantum Address '
+		title: 'Berycoin Address '
 	}).
 	when('/contracts/:contractAddressStr', {
 		templateUrl: 'views/contract.html',
-		title: 'Quantum Contract '
+		title: 'Berycoin Contract '
 	}).
 	when('/status', {
 		templateUrl: 'views/status.html',
